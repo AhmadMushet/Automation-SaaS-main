@@ -23,7 +23,7 @@ import com.utils.CustomLogger
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 
 import internal.GlobalVariable
-import utility.LocalStorageUtilityClass
+//import utility.LocalStorageUtilityClass
 import utility.browserConsole
 
 //import io.netty.util.concurrent.GlobalEventExecutor
@@ -78,9 +78,6 @@ import java.util.Map;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
-import javax.xml.stream.XMLStreamException;
-
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.output.StringBuilderWriter;
 import org.apache.commons.lang.StringUtils;
@@ -91,19 +88,14 @@ import org.dom4j.io.SAXReader;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 
-import com.kms.katalon.core.constants.StringConstants;
 import com.kms.katalon.core.logging.TestSuiteXMLLogParser;
-import com.kms.katalon.core.logging.XMLParserException;
 import com.kms.katalon.core.logging.model.ILogRecord;
 import com.kms.katalon.core.logging.model.TestCaseLogRecord;
 import com.kms.katalon.core.logging.model.TestSuiteCollectionLogRecord;
-import com.kms.katalon.core.logging.model.TestSuiteLogRecord;
 import com.kms.katalon.core.reporting.html.JsSuiteModel;
 import com.kms.katalon.core.reporting.html.ResourceLoader;
 import com.kms.katalon.core.reporting.newreport.NewHTMLReportDataWriter;
 import com.kms.katalon.core.reporting.newreport.NewReportModelMapper;
-import com.kms.katalon.core.reporting.pdf.TestSuitePdfGenerator;
-import com.kms.katalon.core.reporting.pdf.exception.JasperReportException;
 import com.kms.katalon.core.reporting.util.ResourceUtil;
 import com.kms.katalon.core.setting.ReportSettings;
 import com.kms.katalon.core.testdata.reader.CsvWriter;
@@ -125,6 +117,7 @@ class TestCaseAndSuiteListener {
 	def browserConsole = new browserConsole()
 	//File finalReport
 	//boolean isItFirstSite = true
+	
 	@BeforeTestCase
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
 
@@ -156,7 +149,7 @@ class TestCaseAndSuiteListener {
 		//			//WebUI.closeBrowser()
 		//		}
 
-		browserConsole.checkBrowserConsoleLogs()
+		//browserConsole.checkBrowserConsoleLogs()
 		WebUI.closeBrowser()
 		GlobalVariable.isFirstTime = true
 		//		WebUI.comment("done")
@@ -240,16 +233,13 @@ class TestCaseAndSuiteListener {
 		void write(Writer writer) throws IOException, URISyntaxException
 	}
 
-	private static void writeReport(File destFile, Closure... phases)
-	throws IOException, URISyntaxException {
-		new FileOutputStream(destFile).withStream { outputStream ->
-			new OutputStreamWriter(outputStream, StringConstants.DF_CHARSET).withWriter { writer ->
-				phases.each { phase ->
-					phase.call(writer)
-				}
-			}
-		}
-	}
+	/*
+	 * private static void writeReport(File destFile, Closure... phases) throws
+	 * IOException, URISyntaxException { new FileOutputStream(destFile).withStream {
+	 * outputStream -> new OutputStreamWriter(outputStream,
+	 * StringConstants.DF_CHARSET).withWriter { writer -> phases.each { phase ->
+	 * phase.call(writer) } } } }
+	 */
 	private static void writeNewTestSuiteHTMLReport(SuiteReportGenerationOptions options)
 	throws IOException, URISyntaxException {
 

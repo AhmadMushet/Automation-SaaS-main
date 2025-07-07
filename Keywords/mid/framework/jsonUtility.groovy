@@ -21,7 +21,7 @@ import groovy.json.JsonSlurper
 import internal.GlobalVariable
 
 public class jsonUtility {
-	
+
 	@Keyword
 	def static readJsonFile(String filePath) {
 		try {
@@ -38,6 +38,5 @@ public class jsonUtility {
 			println("Error reading JSON file: " + e.message)
 			return null
 		}
-  
 	}
 }

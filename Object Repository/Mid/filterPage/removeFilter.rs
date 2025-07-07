@@ -6,15 +6,23 @@
    <elementGuidId>c40da349-76ec-493b-8ef3-cf556dd5414b</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//span[text()='${data}']/following-sibling::span[starts-with(@class,'styles_iconClose__')]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//*[contains(@class, 'Check this selector ')]</value>
+         <key>BASIC</key>
+         <value>//span[text()='${data}']/following-sibling::span[starts-with(@class,'styles_iconClose__')]</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>XPATH</selectorMethod>
+   <selectorMethod>BASIC</selectorMethod>
    <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//span[text()='${data}']/following-sibling::span[starts-with(@class,'styles_iconClose__')]</value>
+      <webElementGuid>317e8a43-0ac0-4493-a04e-ebbe08829002</webElementGuid>
+   </webElementProperties>
 </WebElementEntity>

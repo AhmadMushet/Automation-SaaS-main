@@ -13,45 +13,80 @@ import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
+
+import generalactions.generalActions
+import internal.GlobalVariable
+import mid.framework.generalAction
+import utility.Utility
+import mid.framework.filter
+import mid.framework.FilterScopes
+import mid.framework.FilterType
+
 import org.openqa.selenium.Keys as Keys
 
-def randomString = CustomKeywords.'mid.framework.generalAction.generateRandomString'()
+/**************************
+ * Test Case Pre-Conditions
+ **************************/
+def GeneralAction = new generalAction()
+def midFilter = new filter()
+def randomString = GeneralAction.generateRandomString(8,false) //CustomKeywords.'mid.framework.GeneralAction.generateRandomString'()
 def randomPhoneNumber = ('5' + (Math.random() * 90000000 + 10000000).toLong())
-
-
+def utility = new Utility()
 WebUI.callTestCase(findTestCase('BE/MID/Customers/All Customers/Open Customer Page'), [:], FailureHandling.STOP_ON_FAILURE)
 
-CustomKeywords.'mid.framework.generalAction.clickOnDependOnName'('Add New Customer')
+/**************************
+ * Test Case Steps
+ **************************/
 
-CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Add New Customer')
+GeneralAction.clickOnDependOnName('Add New Customer')
 
-//CustomKeywords.'mid.framework.generalAction.setTextToInputFieldDependOnName'('first name', randomString )
+GeneralAction.verifyHeaderText('Add New Customer')
+
+GeneralAction.setTextToInputFieldDependOnName('first name', randomString )
 //
-//CustomKeywords.'mid.framework.generalAction.setTextToInputFieldDependOnName'('email', randomString+"@example.com")
+GeneralAction.setTextToInputFieldDependOnName('email', randomString+"@example.com")
 //
-//CustomKeywords.'mid.framework.generalAction.setTextToInputFieldDependOnName'('last name', randomString)
+GeneralAction.setTextToInputFieldDependOnName('last name', randomString)
 //
-//CustomKeywords.'mid.framework.generalAction.setTextToInputFieldDependOnName'('Mobile Number', randomPhoneNumber)
+GeneralAction.setTextToInputFieldDependOnName('Mobile Number', randomPhoneNumber)
 
-CustomKeywords.'mid.framework.generalAction.setDate'('18-12-2024')
+GeneralAction.setDate('Date of Birth','1986-05-10')
 
-CustomKeywords.'mid.framework.generalAction.unableFieldDependOnName'('Allow remote shopping assistance')
+GeneralAction.toggleFieldDependOnName('Allow remote shopping assistance')
 
-CustomKeywords.'mid.framework.generalAction.unableFieldDependOnName'('Sales Notification')
+GeneralAction.toggleFieldDependOnName('Sales Notification')
 
-CustomKeywords.'mid.framework.generalAction.unableFieldDependOnName'('New Arrivals Notification')
+GeneralAction.toggleFieldDependOnName('New Arrivals Notification')
 
-CustomKeywords.'mid.framework.generalAction.unableFieldDependOnName'('Delivery Status Changes Notification')
+GeneralAction.toggleFieldDependOnName('Delivery Status Changes Notification')
 
-CustomKeywords.'mid.framework.generalAction.selectOptionDependOnName'('Associate to Website','Snaptec')
+GeneralAction.selectOptionDependOnName('Associate to Website','Snaptec')
 
-CustomKeywords.'mid.framework.generalAction.selectOptionDependOnName'('Group','New Group')
+GeneralAction.selectOptionDependOnName('Group','New Group')
 
-CustomKeywords.'mid.framework.generalAction.selectOptionDependOnName'('Send Welcome Email From','Select store view')
+GeneralAction.selectOptionDependOnName('Send Welcome Email From','Select store view')
 
-CustomKeywords.'mid.framework.generalAction.selectOptionDependOnName'('Gender','Male')
+GeneralAction.selectOptionDependOnName('Gender','Male')
 
-CustomKeywords.'mid.framework.generalAction.clickOnDependOnName'('Save Customer')
+GeneralAction.clickOnDependOnName('Save Customer')
 
+/**************************
+ * Test Case Verifications
+ **************************/
+CustomKeywords.'generalactions.generalActions.waiteSpinnerToHide'()
+List<Map<String, Object>> filters = [
+	['filterName': 'Customer Name', 'value': randomString, 'filterType':FilterType.TEXT_INPUT],
+	['filterName': 'Email', 'value': randomString+"@example.com",'filterType':FilterType.TEXT_INPUT],
+	['filterName': 'Phone', 'value': randomPhoneNumber,'filterType':FilterType.TEXT_INPUT]
+]
+midFilter.applyFilter(filters)
+//TODO Verification filter results
+
+List<Map<String, Object>> filterResults = [
+	['filterScope':FilterScopes.FILTER_SELECTED_ITEMS, 'value':[randomString,randomString+"@example.com",randomPhoneNumber]],
+	['filterScope':FilterScopes.FILTER_SELECTED_ITEMS, 'value':[randomString,randomString+"@example.com",randomPhoneNumber]]
+	]
+midFilter.verifyFiltersApplied(filterResults)
+//WebUI.delay(10)

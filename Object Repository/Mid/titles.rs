@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>closedFilterList</name>
+   <name>titles</name>
    <tag></tag>
-   <elementGuidId>f4e3325c-08a9-4c02-b0e2-003381e535fc</elementGuidId>
+   <elementGuidId>f710fa21-36c5-4445-962c-55e04d09bb60</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[starts-with(@class,'styles_container__') and contains(@class,'styles_closed__')]</value>
+         <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//span[starts-with(@class,'styles_title__')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

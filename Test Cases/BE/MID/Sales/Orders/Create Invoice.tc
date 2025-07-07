@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Create New Customer</name>
-   <tag>cart</tag>
+   <name>Create Invoice</name>
+   <tag></tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>
-   <testCaseGuid>e378bf9a-a0f8-47a2-941f-c9509b3878f8</testCaseGuid>
+   <testCaseGuid>ca8ea569-ab7c-40a2-ace7-34a1888c284f</testCaseGuid>
 </TestCaseEntity>

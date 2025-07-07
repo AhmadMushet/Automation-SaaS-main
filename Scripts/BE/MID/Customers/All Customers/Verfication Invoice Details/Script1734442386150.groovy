@@ -20,13 +20,13 @@ import org.openqa.selenium.Keys as Keys
 WebUI.callTestCase(findTestCase('BE/MID/Sales/Invoices/Open Invoice details page'), [:], FailureHandling.STOP_ON_FAILURE)
 
 //check all invoice headersand sub-headers 
-CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Order & Account Information')
-CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Invoice Total')
-CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Address Information')
-CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Invoice Comments')
-CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Billing Address')
-CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Shipping Address')
-CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Payment & Shipping Method')
-CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Payment Information')
-CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Shipping & Handling Information')
+CustomKeywords.'mid.framework.GeneralAction.verifyHeaderText'('Order & Account Information')
+CustomKeywords.'mid.framework.GeneralAction.verifyHeaderText'('Invoice Total')
+CustomKeywords.'mid.framework.GeneralAction.verifyHeaderText'('Address Information')
+CustomKeywords.'mid.framework.GeneralAction.verifyHeaderText'('Invoice Comments')
+CustomKeywords.'mid.framework.GeneralAction.verifyHeaderText'('Billing Address')
+CustomKeywords.'mid.framework.GeneralAction.verifyHeaderText'('Shipping Address')
+CustomKeywords.'mid.framework.GeneralAction.verifyHeaderText'('Payment & Shipping Method')
+CustomKeywords.'mid.framework.GeneralAction.verifyHeaderText'('Payment Information')
+CustomKeywords.'mid.framework.GeneralAction.verifyHeaderText'('Shipping & Handling Information')
 

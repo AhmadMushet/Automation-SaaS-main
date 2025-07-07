@@ -21,7 +21,7 @@ import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.ui.Select
 import internal.GlobalVariable
 
-class PaginationPage {
+class pagination {
 
 	String url = "/"
 
@@ -40,7 +40,7 @@ class PaginationPage {
 		WebElement selectedOption = dropdown.getFirstSelectedOption()
 		String selectedValue = selectedOption.getAttribute('value')
 		String selectedText = selectedOption.getText()
-		return Integer.parseInt(selectedValue) 
+		return Integer.parseInt(selectedValue)
 	}
 
 	@Keyword

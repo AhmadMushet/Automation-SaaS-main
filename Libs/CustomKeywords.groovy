@@ -21,38 +21,38 @@ import com.kms.katalon.core.context.TestSuiteContext
 
 
 
-def static "mid.framework.PaginationPage.getSelectedOptionValue2"(
+def static "mid.framework.pagination.getSelectedOptionValue2"(
     	TestObject selector	) {
-    (new mid.framework.PaginationPage()).getSelectedOptionValue2(
+    (new mid.framework.pagination()).getSelectedOptionValue2(
         	selector)
 }
 
 
-def static "mid.framework.PaginationPage.getSelectedOptionValue"(
+def static "mid.framework.pagination.getSelectedOptionValue"(
     	TestObject selector	) {
-    (new mid.framework.PaginationPage()).getSelectedOptionValue(
+    (new mid.framework.pagination()).getSelectedOptionValue(
         	selector)
 }
 
 
-def static "mid.framework.PaginationPage.getSelectedOptionValue3"(
+def static "mid.framework.pagination.getSelectedOptionValue3"(
     	TestObject selector	) {
-    (new mid.framework.PaginationPage()).getSelectedOptionValue3(
+    (new mid.framework.pagination()).getSelectedOptionValue3(
         	selector)
 }
 
 
-def static "mid.framework.PaginationPage.getItemsNum"() {
-    (new mid.framework.PaginationPage()).getItemsNum()
+def static "mid.framework.pagination.getItemsNum"() {
+    (new mid.framework.pagination()).getItemsNum()
 }
 
 
-def static "mid.framework.PaginationPage.selectOption"(
+def static "mid.framework.pagination.selectOption"(
     	TestObject dropdownSelector	
      , 	Boolean isByIndex	
      , 	Object indexID	
      , 	Object value	) {
-    (new mid.framework.PaginationPage()).selectOption(
+    (new mid.framework.pagination()).selectOption(
         	dropdownSelector
          , 	isByIndex
          , 	indexID
@@ -60,29 +60,29 @@ def static "mid.framework.PaginationPage.selectOption"(
 }
 
 
-def static "mid.framework.PaginationPage.selectOption"(
+def static "mid.framework.pagination.selectOption"(
     	TestObject dropdownSelector	
      , 	Boolean isByIndex	
      , 	Object indexID	) {
-    (new mid.framework.PaginationPage()).selectOption(
+    (new mid.framework.pagination()).selectOption(
         	dropdownSelector
          , 	isByIndex
          , 	indexID)
 }
 
 
-def static "mid.framework.PaginationPage.selectOption"(
+def static "mid.framework.pagination.selectOption"(
     	TestObject dropdownSelector	
      , 	Boolean isByIndex	) {
-    (new mid.framework.PaginationPage()).selectOption(
+    (new mid.framework.pagination()).selectOption(
         	dropdownSelector
          , 	isByIndex)
 }
 
 
-def static "mid.framework.PaginationPage.selectOption"(
+def static "mid.framework.pagination.selectOption"(
     	TestObject dropdownSelector	) {
-    (new mid.framework.PaginationPage()).selectOption(
+    (new mid.framework.pagination()).selectOption(
         	dropdownSelector)
 }
 
@@ -426,41 +426,191 @@ def static "helpdesk.HelpdeskUtil.RemoveItemFromLocalStorage"(
 }
 
 
-def static "mid.framework.FilterPage.expandFilter"() {
-    (new mid.framework.FilterPage()).expandFilter()
+def static "mid.framework.MultiSelectHandler.handleMultiSelect"(
+    	String containerId	
+     , 	String action	
+     , 	java.util.Map<String, Object> options	) {
+    (new mid.framework.MultiSelectHandler()).handleMultiSelect(
+        	containerId
+         , 	action
+         , 	options)
 }
 
 
-def static "mid.framework.FilterPage.filter"(
-    	java.util.Map<String, Object>[] params	) {
-    (new mid.framework.FilterPage()).filter(
+def static "mid.framework.MultiSelectHandler.verifyOptionsSelected"(
+    	String containerId	
+     , 	List expectedOptions	) {
+    (new mid.framework.MultiSelectHandler()).verifyOptionsSelected(
+        	containerId
+         , 	expectedOptions)
+}
+
+
+def static "mid.framework.MultiSelectHandler.clearAllSelections"(
+    	String containerId	) {
+    (new mid.framework.MultiSelectHandler()).clearAllSelections(
+        	containerId)
+}
+
+
+def static "mid.framework.MultiSelectHandler.selectRandom"(
+    	String containerId	
+     , 	int count	) {
+    (new mid.framework.MultiSelectHandler()).selectRandom(
+        	containerId
+         , 	count)
+}
+
+
+def static "mid.framework.MultiSelectHandler.selectByName"(
+    	String containerId	
+     , 	String name	) {
+    (new mid.framework.MultiSelectHandler()).selectByName(
+        	containerId
+         , 	name)
+}
+
+
+def static "mid.framework.MultiSelectHandler.selectByNames"(
+    	String containerId	
+     , 	List names	) {
+    (new mid.framework.MultiSelectHandler()).selectByNames(
+        	containerId
+         , 	names)
+}
+
+
+def static "mid.framework.MultiSelectHandler.searchAndSelectRandom"(
+    	String containerId	
+     , 	String searchText	
+     , 	int count	) {
+    (new mid.framework.MultiSelectHandler()).searchAndSelectRandom(
+        	containerId
+         , 	searchText
+         , 	count)
+}
+
+
+def static "mid.framework.MultiSelectHandler.searchAndSelectByText"(
+    	String containerId	
+     , 	String searchText	
+     , 	String selectText	) {
+    (new mid.framework.MultiSelectHandler()).searchAndSelectByText(
+        	containerId
+         , 	searchText
+         , 	selectText)
+}
+
+
+def static "mid.framework.MultiSelectHandler.handleMultiSelect"(
+    	String containerId	
+     , 	String action	) {
+    (new mid.framework.MultiSelectHandler()).handleMultiSelect(
+        	containerId
+         , 	action)
+}
+
+
+def static "mid.framework.MultiSelectHandler.selectRandom"(
+    	String containerId	) {
+    (new mid.framework.MultiSelectHandler()).selectRandom(
+        	containerId)
+}
+
+
+def static "mid.framework.MultiSelectHandler.searchAndSelectRandom"(
+    	String containerId	
+     , 	String searchText	) {
+    (new mid.framework.MultiSelectHandler()).searchAndSelectRandom(
+        	containerId
+         , 	searchText)
+}
+
+ /**
+	 * Expands the filter panel if it's currently collapsed
+	 */ 
+def static "mid.framework.filter.expandFilter"() {
+    (new mid.framework.filter()).expandFilter()
+}
+
+ /**
+	 * Applies filters based on provided parameters
+	 * @param params Array of filter parameters containing filterName and value
+	 */ 
+def static "mid.framework.filter.doFilter"(
+    	List params	) {
+    (new mid.framework.filter()).doFilter(
         	params)
 }
 
-
-def static "mid.framework.FilterPage.clearFilter"(
+ /**
+	 * Clears applied filters
+	 * @param allFilter If true, clears all filters; if false, clears specific filters
+	 * @param filterData Specific filter data to clear (when allFilter is false)
+	 */ 
+def static "mid.framework.filter.clearFilter"(
     	boolean allFilter	
      , 	Object filterData	) {
-    (new mid.framework.FilterPage()).clearFilter(
+    (new mid.framework.filter()).clearFilter(
         	allFilter
          , 	filterData)
 }
 
+ /**
+	 * Clicks the search button to apply filters
+	 */ 
+def static "mid.framework.filter.enabledSearchButton"() {
+    (new mid.framework.filter()).enabledSearchButton()
+}
 
-def static "mid.framework.FilterPage.enabledSearchButton"() {
-    (new mid.framework.FilterPage()).enabledSearchButton()
+ /**
+	 * Complete filter operation: applies filters and executes search
+	 * @param params Filter parameters to apply
+	 */ 
+def static "mid.framework.filter.applyFilter"(
+    	List params	) {
+    (new mid.framework.filter()).applyFilter(
+        	params)
+}
+
+ /**
+	 * Utility method to wait for filter results to load
+	 */ 
+def static "mid.framework.filter.waitForFilterResults"(
+    	int timeoutSeconds	) {
+    (new mid.framework.filter()).waitForFilterResults(
+        	timeoutSeconds)
+}
+
+ /**
+	 * Verifies that filters have been applied correctly
+	 */ 
+def static "mid.framework.filter.verifyFiltersApplied"(
+    	List expectedFilters	) {
+    (new mid.framework.filter()).verifyFiltersApplied(
+        	expectedFilters)
 }
 
 
-def static "mid.framework.FilterPage.clearFilter"(
+def static "mid.framework.filter.verifyNoResults"() {
+    (new mid.framework.filter()).verifyNoResults()
+}
+
+
+def static "mid.framework.filter.clearFilter"(
     	boolean allFilter	) {
-    (new mid.framework.FilterPage()).clearFilter(
+    (new mid.framework.filter()).clearFilter(
         	allFilter)
 }
 
 
-def static "mid.framework.FilterPage.clearFilter"() {
-    (new mid.framework.FilterPage()).clearFilter()
+def static "mid.framework.filter.clearFilter"() {
+    (new mid.framework.filter()).clearFilter()
+}
+
+
+def static "mid.framework.filter.waitForFilterResults"() {
+    (new mid.framework.filter()).waitForFilterResults()
 }
 
 
@@ -536,17 +686,23 @@ def static "signup.signupPhoneVerifications.verificationElementPhoneSignUp"() {
 
 def static "mid.framework.generalAction.setTextToInputFieldDependOnName"(
     	String fieldName	
-     , 	String fieldData	) {
+     , 	String fieldData	
+     , 	boolean isItTo	) {
     (new mid.framework.generalAction()).setTextToInputFieldDependOnName(
         	fieldName
-         , 	fieldData)
+         , 	fieldData
+         , 	isItTo)
 }
 
 
 def static "mid.framework.generalAction.setDate"(
-    	String dateValue	) {
+    	String fieldName	
+     , 	String dateValue	
+     , 	boolean isItTo	) {
     (new mid.framework.generalAction()).setDate(
-        	dateValue)
+        	fieldName
+         , 	dateValue
+         , 	isItTo)
 }
 
 
@@ -557,19 +713,28 @@ def static "mid.framework.generalAction.clickOnDependOnName"(
 }
 
 
-def static "mid.framework.generalAction.unableFieldDependOnName"(
-    	String fieldName	) {
-    (new mid.framework.generalAction()).unableFieldDependOnName(
-        	fieldName)
+def static "mid.framework.generalAction.toggleFieldDependOnName"(
+    	String fieldName	
+     , 	boolean enable	) {
+    (new mid.framework.generalAction()).toggleFieldDependOnName(
+        	fieldName
+         , 	enable)
 }
 
 
 def static "mid.framework.generalAction.selectOptionDependOnName"(
     	String fieldName	
-     , 	String OptionLabel	) {
+     , 	String optionLabel	) {
     (new mid.framework.generalAction()).selectOptionDependOnName(
         	fieldName
-         , 	OptionLabel)
+         , 	optionLabel)
+}
+
+
+def static "mid.framework.generalAction.selectTabDependOnName"(
+    	String fieldName	) {
+    (new mid.framework.generalAction()).selectTabDependOnName(
+        	fieldName)
 }
 
 
@@ -581,9 +746,84 @@ def static "mid.framework.generalAction.verifyHeaderText"(
 
 
 def static "mid.framework.generalAction.verifyMessagePresent"(
+    	String text	
+     , 	int timeoutSeconds	) {
+    (new mid.framework.generalAction()).verifyMessagePresent(
+        	text
+         , 	timeoutSeconds)
+}
+
+
+def static "mid.framework.generalAction.generateRandomString"(
+    	int length	
+     , 	boolean includeNumbers	) {
+    (new mid.framework.generalAction()).generateRandomString(
+        	length
+         , 	includeNumbers)
+}
+
+ /**
+	 * Wait for page to load completely
+	 */ 
+def static "mid.framework.generalAction.waitForPageLoad"(
+    	int timeoutSeconds	) {
+    (new mid.framework.generalAction()).waitForPageLoad(
+        	timeoutSeconds)
+}
+
+ /**
+	 * Take screenshot with custom name
+	 */ 
+def static "mid.framework.generalAction.takeScreenshot"(
+    	String screenshotName	) {
+    (new mid.framework.generalAction()).takeScreenshot(
+        	screenshotName)
+}
+
+
+def static "mid.framework.generalAction.setTextToInputFieldDependOnName"(
+    	String fieldName	
+     , 	String fieldData	) {
+    (new mid.framework.generalAction()).setTextToInputFieldDependOnName(
+        	fieldName
+         , 	fieldData)
+}
+
+
+def static "mid.framework.generalAction.setDate"(
+    	String fieldName	
+     , 	String dateValue	) {
+    (new mid.framework.generalAction()).setDate(
+        	fieldName
+         , 	dateValue)
+}
+
+
+def static "mid.framework.generalAction.setDate"(
+    	String fieldName	) {
+    (new mid.framework.generalAction()).setDate(
+        	fieldName)
+}
+
+
+def static "mid.framework.generalAction.toggleFieldDependOnName"(
+    	String fieldName	) {
+    (new mid.framework.generalAction()).toggleFieldDependOnName(
+        	fieldName)
+}
+
+
+def static "mid.framework.generalAction.verifyMessagePresent"(
     	String text	) {
     (new mid.framework.generalAction()).verifyMessagePresent(
         	text)
+}
+
+
+def static "mid.framework.generalAction.generateRandomString"(
+    	int length	) {
+    (new mid.framework.generalAction()).generateRandomString(
+        	length)
 }
 
 
@@ -592,8 +832,13 @@ def static "mid.framework.generalAction.generateRandomString"() {
 }
 
 
-def static "mid.framework.generalAction.setDate"() {
-    (new mid.framework.generalAction()).setDate()
+def static "mid.framework.generalAction.waitForPageLoad"() {
+    (new mid.framework.generalAction()).waitForPageLoad()
+}
+
+
+def static "mid.framework.generalAction.takeScreenshot"() {
+    (new mid.framework.generalAction()).takeScreenshot()
 }
 
 
@@ -679,6 +924,30 @@ def static "mid.framework.item.exportItems"(
 }
 
 
+def static "mid.framework.item.clickExportButton"() {
+    (new mid.framework.item()).clickExportButton()
+}
+
+
+def static "mid.framework.item.clickMoreActionsButton"() {
+    (new mid.framework.item()).clickMoreActionsButton()
+}
+
+
+def static "mid.framework.item.selectMoreActionsOption"(
+    	String optionText	) {
+    (new mid.framework.item()).selectMoreActionsOption(
+        	optionText)
+}
+
+
+def static "mid.framework.item.checkItemListAppeared"(
+    	Object timeOut	) {
+    (new mid.framework.item()).checkItemListAppeared(
+        	timeOut)
+}
+
+
 def static "mid.framework.item.editItem"(
     	boolean isView	
      , 	boolean isRandom	) {
@@ -709,6 +978,16 @@ def static "mid.framework.item.selectItem"(
 
 def static "mid.framework.item.selectItem"() {
     (new mid.framework.item()).selectItem()
+}
+
+
+def static "mid.framework.item.exportItems"() {
+    (new mid.framework.item()).exportItems()
+}
+
+
+def static "mid.framework.item.checkItemListAppeared"() {
+    (new mid.framework.item()).checkItemListAppeared()
 }
 
 
@@ -842,6 +1121,20 @@ def static "utility.Utility.clickElementSafely"(
     	TestObject testObject	) {
     (new utility.Utility()).clickElementSafely(
         	testObject)
+}
+
+
+def static "utility.Utility.extendTestObjectXPath"(
+    	TestObject baseObject	
+     , 	String extensionXPath	) {
+    (new utility.Utility()).extendTestObjectXPath(
+        	baseObject
+         , 	extensionXPath)
+}
+
+
+def static "utility.browserConsole.checkBrowserConsoleLogs"() {
+    (new utility.browserConsole()).checkBrowserConsoleLogs()
 }
 
 

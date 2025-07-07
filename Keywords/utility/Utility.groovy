@@ -21,6 +21,7 @@ import com.kms.katalon.core.testcase.TestCase
 import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.ConditionType
+import com.kms.katalon.core.testobject.SelectorMethod
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
@@ -31,14 +32,9 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import com.utils.CustomLogger
-
 import internal.GlobalVariable as GlobalVariable
-import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.kms.katalon.core.webui.driver.DriverFactory
-
 import org.openqa.selenium.ElementClickInterceptedException
 import org.openqa.selenium.JavascriptExecutor
-import org.openqa.selenium.WebElement
 import generalactions.generalActions
 public class Utility {
 	TestObject tb=new TestObject()
@@ -199,6 +195,19 @@ public class Utility {
 			WebElement element = WebUiBuiltInKeywords.findWebElement(testObject,5)
 			clickUsingJavaScript(element)
 		}
+	}
+
+	@Keyword
+	TestObject extendTestObjectXPath(TestObject baseObject, String extensionXPath) {
+		// Get the original XPath value
+		String originalXPath = baseObject.findPropertyValue("xpath")
+		String newXPath = originalXPath + extensionXPath
+		TestObject tb=new TestObject()
+		tb.addProperty('xpath', ConditionType.EQUALS, newXPath)
+		//TestObject newObject = new TestObject()//baseObject.clone()
+		//newObject.setSelectorValue(SelectorMethod.XPATH, newXPath)
+
+		return tb
 	}
 }
 
